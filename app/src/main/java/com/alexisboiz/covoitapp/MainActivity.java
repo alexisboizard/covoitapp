@@ -14,6 +14,11 @@ import com.alexisboiz.covoitapp.notification.NotificationFragment;
 import com.alexisboiz.covoitapp.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    private final String API_URL = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=aires-covoiturage&q=&rows=100000000&facet=ville&facet=type_de_parking&facet=source&facet=pmr&facet=transport_public&facet=prix&facet=ouverture&facet=lumiere&facet=velo&facet=couv4gbytel&facet=couv4gsfr&facet=couv4gorange&facet=couv4gfree&facet=nom_epci&facet=nom_reg&facet=nom_dep";
+    private final String API_URL = "https://public.opendatasoft.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.home_nav:
-                        requestAPI(API_URL);
+                        requestAPI(API_URL, 10);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fl_fragment, carpoolAreaFragment).commit();
                         return true;
                     case R.id.map_nav:
@@ -65,17 +70,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void requestAPI(String api_url) {
+    public void requestAPI(String api_url, int row_number) {
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(api_url)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         Log.e("m", String.valueOf(retrofit));
         CarpoolService service = retrofit.create(CarpoolService.class);
-        service.getCarpoolArea("aires-covoiturage").enqueue(new Callback<CarpoolAreaData>() {
+        //https://public.opendatasoft.com/api/records/1.0/search/?dataset=aires-covoiturage&q=a&rows=1&facet=ville&facet=type_de_parking&facet=source&facet=pmr&facet=prix&facet=ouverture&facet=lumiere&facet=velo&facet=nom_reg&facet=nom_dep
+        Map<String,String> queryParams = new HashMap<String,String>();
+        queryParams.put("row", String.valueOf(row_number));
+        queryParams.put("dataset", "aires-covoiturage");
+
+        service.getCarpoolArea(queryParams).enqueue(new Callback<CarpoolAreaData>() {
             @Override
             public void onResponse(Call<CarpoolAreaData> call, Response<CarpoolAreaData> response) {
-                response.body();
+                if(response.isSuccessful()){
+                    //List<CarpoolAreaData> list = (List<CarpoolAreaData>) response.body();
+                }else{
+                    Log.e("Error","Error on API Request");
+                }
             }
 
             @Override
