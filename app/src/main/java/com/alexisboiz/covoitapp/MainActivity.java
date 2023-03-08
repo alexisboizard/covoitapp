@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<CarpoolAreaData> call, Response<CarpoolAreaData> response) {
                 if(response.isSuccessful()){
                     carpoolAreaData = response.body();
-                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
 
                 }else{
                     Toast.makeText(getApplicationContext(), "Error in API Request", Toast.LENGTH_LONG).show();
