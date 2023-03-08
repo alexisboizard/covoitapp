@@ -3,6 +3,7 @@ package com.alexisboiz.covoitapp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
+    CarpoolAreaData carpoolAreaData;
     private final String API_URL = "https://public.opendatasoft.com/";
 
     @Override
@@ -90,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<CarpoolAreaData> call, Response<CarpoolAreaData> response) {
                 if(response.isSuccessful()){
-                    //List<CarpoolAreaData> list = (List<CarpoolAreaData>) response.body();
+                    carpoolAreaData = response.body();
+                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_LONG).show();
+
                 }else{
-                    Log.e("Error","Error on API Request");
+                    Toast.makeText(getApplicationContext(), "Error in API Request", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -101,10 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Error",String.valueOf(t));
             }
         });
-
-    }
-
-    public void getCarpoolArea(){
 
     }
 }
