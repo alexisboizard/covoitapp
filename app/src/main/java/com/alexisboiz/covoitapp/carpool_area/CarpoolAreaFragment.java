@@ -1,48 +1,39 @@
 package com.alexisboiz.covoitapp.carpool_area;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alexisboiz.covoitapp.R;
+import com.alexisboiz.covoitapp.model.CarpoolAreaData;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CarpoolAreaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.io.Serializable;
 public class CarpoolAreaFragment extends Fragment {
+    private static final String CARPOOL_DATA = "CARPOOL_DATA";
+    private static final String CONTEXT = "CTX";
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    CarpoolAreaData carpoolAreaData;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    CarpoolAreaAdapter adapter;
+
+    RecyclerView rvCarpoolArea;
+    Context ctx;
 
     public CarpoolAreaFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CarpoolAreaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CarpoolAreaFragment newInstance(String param1, String param2) {
+    public static CarpoolAreaFragment newInstance(Context ctx, CarpoolAreaData carpoolAreaData) {
         CarpoolAreaFragment fragment = new CarpoolAreaFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putSerializable(CARPOOL_DATA, (Serializable) carpoolAreaData);
+        args.putSerializable(CONTEXT, (Serializable) ctx);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,15 +42,22 @@ public class CarpoolAreaFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            carpoolAreaData = (CarpoolAreaData) getArguments().getSerializable(CARPOOL_DATA);
+            ctx = (Context) getArguments().getSerializable(CONTEXT);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_carpool_area, container, false);
+        View view = inflater.inflate(R.layout.fragment_carpool_area, container, false);
+
+        adapter = new CarpoolAreaAdapter(carpoolAreaData);
+        rvCarpoolArea = view.findViewById(R.id.rv_carpool_area);
+        rvCarpoolArea.setAdapter(adapter);
+        rvCarpoolArea.setLayoutManager(new LinearLayoutManager(getContext()));
+        return view;
     }
 }

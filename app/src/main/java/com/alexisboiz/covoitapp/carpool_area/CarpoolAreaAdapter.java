@@ -6,7 +6,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alexisboiz.covoitapp.model.CarpoolAreaData;
+
 public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.ViewHolder> {
+    CarpoolAreaData carpoolAreaData;
+    public CarpoolAreaAdapter(CarpoolAreaData carpoolAreaData){
+        this.carpoolAreaData = carpoolAreaData;
+    }
     @NonNull
     @Override
     public CarpoolAreaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
