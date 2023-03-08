@@ -6,7 +6,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alexisboiz.covoitapp.model.CarpoolAreaData;
+
+import java.util.List;
+
 public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.ViewHolder> {
+    List<CarpoolAreaData> carpoolAreaData;
     @NonNull
     @Override
     public CarpoolAreaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -20,7 +25,7 @@ public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return carpoolAreaData.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
