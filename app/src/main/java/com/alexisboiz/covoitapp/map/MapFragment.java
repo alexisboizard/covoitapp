@@ -1,40 +1,52 @@
 package com.alexisboiz.covoitapp.map;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.alexisboiz.covoitapp.MainActivity;
 import com.alexisboiz.covoitapp.R;
+import com.alexisboiz.covoitapp.carpool_area.carpool_detail.CarpoolAreaDetail;
+import com.alexisboiz.covoitapp.model.API_Data.Fields;
+import com.alexisboiz.covoitapp.model.API_Data.Record;
+import com.alexisboiz.covoitapp.model.CarpoolAreaData;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class MapFragment extends Fragment {
 
+    CarpoolAreaData carpoolAreaData;
+    LatLng userLoc = new LatLng(0,0);
+
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                carpoolAreaData = getArguments().getParcelable(MainActivity.CARPOOL_AREA_DATA_KEY,CarpoolAreaData.class);
+            }else{
+                carpoolAreaData = getArguments().getSerializable(MainActivity.CARPOOL_AREA_DATA_KEY_SERIALIZABLE,CarpoolAreaData.class);
+            }
+            userLoc = getArguments().getParcelable(MainActivity.USER_LOCATION_KEY, LatLng.class);
+            buildPinsOnMap(googleMap);
         }
     };
 
@@ -55,4 +67,37 @@ public class MapFragment extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
+
+    public void buildPinsOnMap(GoogleMap map) {
+        List<Record> recordList = carpoolAreaData.getRecords();
+
+        LatLng origin = userLoc;
+        map.moveCamera(CameraUpdateFactory.newLatLng(origin));
+        pointToPosition(origin,map);
+
+        for (Record record : recordList) {
+            List<Double> coord = record.getFields().getCoordonnees();
+            LatLng pin = new LatLng(coord.get(0), coord.get(1));
+            map.addMarker(new MarkerOptions().position(pin).title(record.getFields().getNomDuLieu()));
+        }
+        map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(@NonNull Marker marker) {
+                LatLng areaCoord = marker.getPosition();
+                Fields itemField = carpoolAreaData.getFieldsWithCoordinate(areaCoord);
+                Intent i = new Intent(getContext(), CarpoolAreaDetail.class);
+                i.putExtra(CarpoolAreaDetail.DATA, (Serializable) itemField);
+                startActivity(i);
+                Toast.makeText(getContext(),"Clicked on " + marker.getTitle(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    private void pointToPosition(LatLng position, GoogleMap map) {
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(position)
+                .zoom(7.0f).build();
+
+        map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
 }
