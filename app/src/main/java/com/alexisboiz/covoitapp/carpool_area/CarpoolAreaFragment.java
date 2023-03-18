@@ -1,7 +1,6 @@
 package com.alexisboiz.covoitapp.carpool_area;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,7 +47,7 @@ public class CarpoolAreaFragment extends Fragment {
     public static CarpoolAreaFragment newInstance(Context ctx, CarpoolAreaData carpoolAreaData) {
         CarpoolAreaFragment fragment = new CarpoolAreaFragment();
         Bundle args = new Bundle();
-        args.putSerializable(CARPOOL_DATA, (Serializable) carpoolAreaData);
+        args.putParcelable(CARPOOL_DATA, carpoolAreaData);
         args.putSerializable(CONTEXT, (Serializable) ctx);
         fragment.setArguments(args);
         return fragment;
@@ -57,13 +56,7 @@ public class CarpoolAreaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                carpoolAreaData = getArguments().getParcelable(MainActivity.CARPOOL_AREA_DATA_KEY, CarpoolAreaData.class);
-            }
-        }
-
-
+        this.carpoolAreaData = CarpoolAreaData.getInstance();
     }
 
     @Override

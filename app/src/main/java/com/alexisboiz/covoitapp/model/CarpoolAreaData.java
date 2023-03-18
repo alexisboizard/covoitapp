@@ -14,7 +14,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-public class CarpoolAreaData implements Parcelable {
+public final class CarpoolAreaData implements Parcelable {
 
     @SerializedName("nhits")
     @Expose
@@ -26,6 +26,8 @@ public class CarpoolAreaData implements Parcelable {
     @Expose
     private List<Record> records;
 
+    private static CarpoolAreaData  instance;
+
     protected CarpoolAreaData(Parcel in) {
         if (in.readByte() == 0) {
             nhits = null;
@@ -34,6 +36,17 @@ public class CarpoolAreaData implements Parcelable {
         }
         parameters = in.readParcelable(Parameters.class.getClassLoader());
         records = in.createTypedArrayList(Record.CREATOR);
+    }
+
+    private CarpoolAreaData(){
+
+    }
+
+    public static CarpoolAreaData getInstance(){
+        if(instance == null){
+            instance = new CarpoolAreaData();
+        }
+        return instance;
     }
 
     public static final Creator<CarpoolAreaData> CREATOR = new Creator<CarpoolAreaData>() {
@@ -105,4 +118,6 @@ public class CarpoolAreaData implements Parcelable {
             parcel.writeParcelableList(this.records, i);
         }
     }
+
+
 }

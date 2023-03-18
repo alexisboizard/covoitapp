@@ -25,7 +25,6 @@ import com.alexisboiz.covoitapp.carpool_area.CarpoolAreaFragment;
 import com.alexisboiz.covoitapp.manager.CarpoolAreaDataManagerCallback;
 import com.alexisboiz.covoitapp.manager.MainActivityController;
 import com.alexisboiz.covoitapp.map.MapFragment;
-import com.alexisboiz.covoitapp.model.API_Data.Record;
 import com.alexisboiz.covoitapp.model.CarpoolAreaData;
 import com.alexisboiz.covoitapp.notification.NotificationFragment;
 import com.alexisboiz.covoitapp.settings.SettingsFragment;
@@ -34,8 +33,6 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
@@ -84,16 +81,16 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
         setUserLocation(fusedLocationClient);
+
         getApiData();
-
-
+        carpoolAreaData = CarpoolAreaData.getInstance();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.home_nav:
-                        List<Record> r = carpoolAreaData.getRecords();
+                        //List<Record> r = carpoolAreaData.getRecords();
                         getSupportFragmentManager().beginTransaction().replace(R.id.fl_fragment, carpoolAreaFragment).commit();
                         return true;
                     case R.id.map_nav:
@@ -165,9 +162,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         mainActivityController.getCarpoolAreaData(new CarpoolAreaDataManagerCallback() {
             @Override
             public void getCarpoolAreaResponseSuccess(CarpoolAreaData carpoolAreaData) {
-                carpoolAreaFragment.init(carpoolAreaData, mapsFragment);
                 Toast.makeText(getApplicationContext(), "API request Successful !", Toast.LENGTH_LONG).show();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fl_fragment, carpoolAreaFragment).commit();
+
+
 
                 Bundle carpoolAreaFragmentBundle = new Bundle();
                 carpoolAreaFragmentBundle.putParcelable(CARPOOL_AREA_DATA_KEY, carpoolAreaData);

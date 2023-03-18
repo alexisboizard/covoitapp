@@ -1,7 +1,7 @@
 package com.alexisboiz.covoitapp.map;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,14 +38,13 @@ public class MapFragment extends Fragment {
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
+        @SuppressLint("NewApi")
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                carpoolAreaData = getArguments().getParcelable(MainActivity.CARPOOL_AREA_DATA_KEY,CarpoolAreaData.class);
-            }else{
-                carpoolAreaData = getArguments().getSerializable(MainActivity.CARPOOL_AREA_DATA_KEY_SERIALIZABLE,CarpoolAreaData.class);
+            if (getArguments() != null) {
+                carpoolAreaData = getArguments().getParcelable(MainActivity.CARPOOL_AREA_DATA_KEY);
+                userLoc = getArguments().getParcelable(MainActivity.USER_LOCATION_KEY);
             }
-            userLoc = getArguments().getParcelable(MainActivity.USER_LOCATION_KEY, LatLng.class);
             buildPinsOnMap(googleMap);
         }
     };
