@@ -3,8 +3,10 @@ package com.alexisboiz.covoitapp.model.API_Data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
-public class Fields {
+
+public class Fields implements Serializable {
 
     @SerializedName("type_de_parking")
     @Expose
@@ -24,9 +26,6 @@ public class Fields {
     @SerializedName("nom_epci")
     @Expose
     private String nomEpci;
-    @SerializedName("places")
-    @Expose
-    private Integer places;
     @SerializedName("population")
     @Expose
     private Integer population;
@@ -54,12 +53,6 @@ public class Fields {
     @SerializedName("coordonnees")
     @Expose
     private List<Double> coordonnees;
-    @SerializedName("transport_public")
-    @Expose
-    private String transportPublic;
-    @SerializedName("proprietaire")
-    @Expose
-    private String proprietaire;
 
     public String getTypeDeParking() {
         return typeDeParking;
@@ -107,14 +100,6 @@ public class Fields {
 
     public void setNomEpci(String nomEpci) {
         this.nomEpci = nomEpci;
-    }
-
-    public Integer getPlaces() {
-        return places;
-    }
-
-    public void setPlaces(Integer places) {
-        this.places = places;
     }
 
     public Integer getPopulation() {
@@ -187,22 +172,6 @@ public class Fields {
 
     public void setCoordonnees(List<Double> coordonnees) {
         this.coordonnees = coordonnees;
-    }
-
-    public String getTransportPublic() {
-        return transportPublic;
-    }
-
-    public void setTransportPublic(String transportPublic) {
-        this.transportPublic = transportPublic;
-    }
-
-    public String getProprietaire() {
-        return proprietaire;
-    }
-
-    public void setProprietaire(String proprietaire) {
-        this.proprietaire = proprietaire;
     }
 
 }
