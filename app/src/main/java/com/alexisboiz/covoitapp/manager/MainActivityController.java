@@ -32,13 +32,9 @@ public class MainActivityController {
             @Override
             public void onResponse(Call<CarpoolAreaData> call, Response<CarpoolAreaData> response) {
                 if(response.isSuccessful()){
-
-                    CarpoolAreaData tempData = response.body();
-                    CarpoolAreaData carpoolAreaData = CarpoolAreaData.getInstance();
-                    carpoolAreaData.setRecords(tempData.getRecords());
-                    carpoolAreaData.setNhits(tempData.getNhits());
-                    carpoolAreaData.setParameters(tempData.getParameters());
-
+                    CarpoolAreaData carpoolAreaData = response.body();
+                    CacheManager cm =  CacheManager.getInstance();
+                    cm.setCarpoolAreaData(carpoolAreaData);
                     callback.getCarpoolAreaResponseSuccess(carpoolAreaData);
                 }else{
                     Log.e("onResponse", "Not successfull : " + response.code());
