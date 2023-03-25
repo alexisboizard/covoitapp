@@ -5,10 +5,31 @@
     android:layout_height="wrap_content"
     tools:context=".carpool_area.CarpoolAreaFragment">
 
+    <include
+        android:id="@+id/empty_list"
+        layout="@layout/empty_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="731dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:queryHint="Chercher un point de covoit ..."
+        android:iconifiedByDefault="false"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_carpool_area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
         />
 
 </FrameLayout>

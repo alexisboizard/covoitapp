@@ -10,7 +10,7 @@
         android:layout_height="88dp"
         android:layout_margin="20dp"
         app:cardBackgroundColor="@color/material_dynamic_neutral95"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -51,6 +51,16 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="01500"/>
+
+        <RadioButton
+            android:id="@+id/radio_favorite"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/like_button"
+            android:button="@android:color/transparent"
+            />
 
 
     </androidx.cardview.widget.CardView>
