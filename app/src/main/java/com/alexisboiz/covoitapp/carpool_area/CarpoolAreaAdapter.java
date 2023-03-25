@@ -1,41 +1,73 @@
 package com.alexisboiz.covoitapp.carpool_area;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alexisboiz.covoitapp.R;
 import com.alexisboiz.covoitapp.carpool_area.carpool_detail.CarpoolAreaDetail;
+import com.alexisboiz.covoitapp.manager.CacheManager;
 import com.alexisboiz.covoitapp.model.API_Data.Fields;
+import com.alexisboiz.covoitapp.model.API_Data.Record;
 import com.alexisboiz.covoitapp.model.CarpoolAreaData;
-import com.alexisboiz.covoitapp.utils.CarpoolAreaDiffCallback;
 
 import java.io.Serializable;
+import java.util.List;
 
-public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.ViewHolder>{
+public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.ViewHolder> {
     CarpoolAreaData carpoolAreaData;
+    List<Record> recordList;
 
-    public CarpoolAreaAdapter(CarpoolAreaData carpoolAreaData){
+
+    CacheManager cacheManager;
+
+    Drawable fav_heart, no_fav_heart;
+
+    public CarpoolAreaAdapter(CarpoolAreaData carpoolAreaData) {
         this.carpoolAreaData = carpoolAreaData;
+        recordList = carpoolAreaData.getRecords();
+        cacheManager = CacheManager.getInstance();
+
     }
+
     @NonNull
     @Override
     public CarpoolAreaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.adapter_carpool_item,parent,false);
+        View view = inflater.inflate(R.layout.adapter_carpool_item, parent, false);
+        fav_heart = ContextCompat.getDrawable(view.getContext(), R.drawable.fav_heart);
+        no_fav_heart = ContextCompat.getDrawable(view.getContext(), R.drawable.no_fav_heart);
         return new CarpoolAreaAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CarpoolAreaAdapter.ViewHolder holder, int position) {
-        Fields itemField = carpoolAreaData.getRecords().get(position).getFields();
+    public void onBindViewHolder(@NonNull CarpoolAreaAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Fields itemField;
+        if(position<0){
+            itemField = recordList.get(0).getFields();
+        }
+        else{
+            itemField = recordList.get(position).getFields();
+        }
+
+
+        List<String> favoriteAreaList = CacheManager.getInstance().getFavoriteList();
+
+        for(String recordId : favoriteAreaList){
+            if(recordList.get(position).getRecordid().equals(recordId)){
+                holder.radio_favorite.setBackground(fav_heart);
+            }
+        }
 
         holder.iv_carpool_area_item.setImageResource(R.drawable.ic_car_foreground);
         holder.tv_area_place.setText(itemField.getNomDuLieu());
@@ -51,33 +83,44 @@ public class CarpoolAreaAdapter extends RecyclerView.Adapter<CarpoolAreaAdapter.
 
             }
         });
+        holder.radio_favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(holder.radio_favorite.isChecked()){
+                    holder.radio_favorite.setBackground(fav_heart);
+                    cacheManager.addFavorite(recordList.get(position).getRecordid());
+                    carpoolAreaData.moveToFirst(recordList.get(position));
+                }else{
+                    holder.radio_favorite.setBackground(no_fav_heart);
+                }
+
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return carpoolAreaData.getRecords().size();
+        return recordList.size();
     }
 
-    public void updateCarpoolAreaData(CarpoolAreaData dataset){
-        CarpoolAreaDiffCallback diffCallback= new CarpoolAreaDiffCallback(this.carpoolAreaData, dataset);
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
-
-        this.carpoolAreaData = dataset;
-        diffResult.dispatchUpdatesTo(this);
-
+    public void setRecordList(List<Record> recordList) {
+        this.recordList = recordList;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView iv_carpool_area_item;
+
+        RadioButton radio_favorite;
         TextView tv_area_place, tv_area_city, tv_area_zip;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             iv_carpool_area_item = itemView.findViewById(R.id.iv_carpool_item);
-            tv_area_place= itemView.findViewById(R.id.tv_carpool_item_place);
-            tv_area_city= itemView.findViewById(R.id.tv_carpool_item_city);
-            tv_area_zip= itemView.findViewById(R.id.tv_carpool_item_zip);
-
+            tv_area_place = itemView.findViewById(R.id.tv_carpool_item_place);
+            tv_area_city = itemView.findViewById(R.id.tv_carpool_item_city);
+            tv_area_zip = itemView.findViewById(R.id.tv_carpool_item_zip);
+            radio_favorite = itemView.findViewById(R.id.radio_favorite);
         }
     }
 }
