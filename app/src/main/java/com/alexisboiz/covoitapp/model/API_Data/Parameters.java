@@ -29,6 +29,35 @@ public class Parameters implements Parcelable {
     @Expose
     private String timezone;
 
+    protected Parameters(Parcel in) {
+        dataset = in.readString();
+        q = in.readString();
+        if (in.readByte() == 0) {
+            rows = null;
+        } else {
+            rows = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            start = null;
+        } else {
+            start = in.readInt();
+        }
+        format = in.readString();
+        timezone = in.readString();
+    }
+
+    public static final Creator<Parameters> CREATOR = new Creator<Parameters>() {
+        @Override
+        public Parameters createFromParcel(Parcel in) {
+            return new Parameters(in);
+        }
+
+        @Override
+        public Parameters[] newArray(int size) {
+            return new Parameters[size];
+        }
+    };
+
     public String getDataset() {
         return dataset;
     }
