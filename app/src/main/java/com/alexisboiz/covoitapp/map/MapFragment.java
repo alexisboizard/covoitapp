@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.alexisboiz.covoitapp.MainActivity;
 import com.alexisboiz.covoitapp.R;
 import com.alexisboiz.covoitapp.carpool_area.carpool_detail.CarpoolAreaDetail;
+import com.alexisboiz.covoitapp.manager.CacheManager;
 import com.alexisboiz.covoitapp.model.API_Data.Fields;
 import com.alexisboiz.covoitapp.model.API_Data.Record;
 import com.alexisboiz.covoitapp.model.CarpoolAreaData;
@@ -41,8 +42,8 @@ public class MapFragment extends Fragment {
         @SuppressLint("NewApi")
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            carpoolAreaData = CacheManager.getInstance().getCarpoolAreaData();
             if (getArguments() != null) {
-                carpoolAreaData = getArguments().getParcelable(MainActivity.CARPOOL_AREA_DATA_KEY);
                 userLoc = getArguments().getParcelable(MainActivity.USER_LOCATION_KEY);
             }
             buildPinsOnMap(googleMap);
