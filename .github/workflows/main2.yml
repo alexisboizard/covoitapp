@@ -23,8 +23,8 @@ jobs:
       run: ./gradlew build
     - name: Build Debug APK
       run: ./gradlew assembleDebug
-    - name : Config git
-      run: git config --global --add safe.directory /github/workspace
+    - name: Set ownership
+      run: chown -R $(id -u):$(id -g) $PWD
     - name: Releasing using Hub
       uses: valley-fordham/action-release-debugapk@master
       env:
