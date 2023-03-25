@@ -25,6 +25,8 @@ jobs:
       run: ./gradlew assembleDebug
     - name: Set ownership
       run: chown -R $(id -u):$(id -g) $PWD
+    - name : Fix ownership
+      run: git config --global --add safe.directory '*'
     - name: Releasing using Hub
       uses: valley-fordham/action-release-debugapk@0.1 
       env:
