@@ -2,6 +2,7 @@ package com.alexisboiz.covoitapp;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -18,10 +19,15 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.alexisboiz.covoitapp.carpool_area.CarpoolAreaFragment;
+import com.alexisboiz.covoitapp.manager.CacheManager;
 import com.alexisboiz.covoitapp.manager.CarpoolAreaDataManagerCallback;
 import com.alexisboiz.covoitapp.manager.MainActivityController;
 import com.alexisboiz.covoitapp.map.MapFragment;
@@ -31,14 +37,16 @@ import com.alexisboiz.covoitapp.settings.SettingsFragment;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
-    boolean APIRequestDone = false;
+    public static final String PREFS_NAME = "FAVORITE_AREA";
 
-    BottomNavigationView bottomNavigationView;
+
+    DrawerLayout drawerLayout;
     CarpoolAreaData carpoolAreaData;
     CarpoolAreaFragment carpoolAreaFragment;
     MapFragment mapsFragment;
@@ -59,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mainActivity = this;
         mainActivityController = new MainActivityController();
 
@@ -70,22 +79,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         loading_spinner = findViewById(R.id.loadingSpinner);
 
-        bottomNavigationView = findViewById(R.id.bt_nav);
-        bottomNavigationView.setSelectedItemId(R.id.home_nav);
-
-        carpoolAreaFragment = new CarpoolAreaFragment();
-        mapsFragment = new MapFragment();
-        notificationFragment = new NotificationFragment();
-        settingsFragment = new SettingsFragment();
-        bottomNavigationView.setSelectedItemId(R.id.home_nav);
-
-        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
-        setUserLocation(fusedLocationClient);
-
-        getApiData();
-        carpoolAreaData = CarpoolAreaData.getInstance();
-
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
+        setSupportActionBar(toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -106,7 +104,22 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 return false;
             }
         });
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.open_nav, R.string.close_nav);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
+
+        carpoolAreaFragment = new CarpoolAreaFragment();
+        mapsFragment = new MapFragment();
+        notificationFragment = new NotificationFragment();
+        settingsFragment = new SettingsFragment();
+        //navigationView.setCheckedItem(R.id.home_nav);
+
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
+        setUserLocation(fusedLocationClient);
+
+        getApiData();
+        drawerLayout.closeDrawer(GravityCompat.START);
 
     }
 
@@ -120,7 +133,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                                     Manifest.permission.ACCESS_COARSE_LOCATION, true);
                             if (fineLocationGranted != null && fineLocationGranted) {
                                 userLoc = new LatLng(getLocation().getLatitude(),getLocation().getLongitude());
-
                             } else if (coarseLocationGranted != null && coarseLocationGranted) {
                                 userLoc = new LatLng(getLocation().getLatitude(),getLocation().getLongitude());
                             } else {
@@ -139,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     private Location getLocation() {
         LocationManager lm = (LocationManager) getSystemService(getApplicationContext().LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
+            Log.e("getLocation()", "Location permission not granted");
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 5F, (LocationListener) this);
@@ -161,19 +173,17 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public void getApiData(){
         mainActivityController.getCarpoolAreaData(new CarpoolAreaDataManagerCallback() {
             @Override
-            public void getCarpoolAreaResponseSuccess(CarpoolAreaData carpoolAreaData) {
+            public void getCarpoolAreaResponseSuccess(CarpoolAreaData data) {
+                carpoolAreaData = data;
                 Toast.makeText(getApplicationContext(), "API request Successful !", Toast.LENGTH_LONG).show();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fl_fragment, carpoolAreaFragment).commit();
 
-
-
                 Bundle carpoolAreaFragmentBundle = new Bundle();
-                carpoolAreaFragmentBundle.putParcelable(CARPOOL_AREA_DATA_KEY, carpoolAreaData);
+                carpoolAreaFragmentBundle.putParcelable(CARPOOL_AREA_DATA_KEY, data);
                 carpoolAreaFragment.setArguments(carpoolAreaFragmentBundle);
 
-
                 Bundle mapsFragmentBundle = new Bundle();
-                mapsFragmentBundle.putParcelable(CARPOOL_AREA_DATA_KEY, carpoolAreaData);
+                mapsFragmentBundle.putParcelable(CARPOOL_AREA_DATA_KEY, data);
                 mapsFragmentBundle.putParcelable(USER_LOCATION_KEY, userLoc);
 
                 mapsFragment.setArguments(mapsFragmentBundle);
@@ -186,6 +196,24 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 Log.e("getCarpoolAreaResponseError", error);
             }
         });
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        int areaIdentifier = 0;
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.clear();
+        List<String> favoriteAreaList = CacheManager.getInstance().getFavoriteList();
+        int favoriteListSize = favoriteAreaList.size();
+
+        editor.putInt("favoriteListSize", favoriteListSize);
+        for(String favoriteArea : favoriteAreaList){
+            editor.putString("area_"+areaIdentifier, favoriteArea);
+        }
+        editor.apply();
+
     }
 }
 
