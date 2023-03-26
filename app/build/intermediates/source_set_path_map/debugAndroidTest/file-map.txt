@@ -1,0 +1,7 @@
+com.alexisboiz.covoitapp.test.app-jetified-core-1.5.0-0 /Users/alexisboizard/.gradle/caches/transforms-3/789d491c99669aad467a20ca18a167c8/transformed/jetified-core-1.5.0/res
+com.alexisboiz.covoitapp.test.app-jetified-annotation-experimental-1.3.0-1 /Users/alexisboizard/.gradle/caches/transforms-3/cb69a47b58dfc73053f5e597743ad9ee/transformed/jetified-annotation-experimental-1.3.0/res
+com.alexisboiz.covoitapp.test.app-androidTest-2 /Users/alexisboizard/Documents/ANDROID/covoitapp/app/build/generated/res/resValues/androidTest/debug
+com.alexisboiz.covoitapp.test.app-androidTest-3 /Users/alexisboizard/Documents/ANDROID/covoitapp/app/build/generated/res/rs/androidTest/debug
+com.alexisboiz.covoitapp.test.app-mergeDebugAndroidTestResources-4 /Users/alexisboizard/Documents/ANDROID/covoitapp/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.alexisboiz.covoitapp.test.app-mergeDebugAndroidTestResources-5 /Users/alexisboizard/Documents/ANDROID/covoitapp/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.alexisboiz.covoitapp.test.app-merged_res-6 /Users/alexisboizard/Documents/ANDROID/covoitapp/app/build/intermediates/merged_res/debugAndroidTest

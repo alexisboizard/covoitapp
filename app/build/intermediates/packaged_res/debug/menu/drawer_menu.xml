@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn= "navigation_view">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_nav"
+            android:icon="@drawable/ic_home_foreground"
+            android:title="Accueil" />
+        <item
+            android:id="@+id/map_nav"
+            android:icon="@drawable/ic_map_foreground"
+            android:title="Carte" />
+        <item
+            android:id="@+id/notification_nav"
+            android:icon="@drawable/ic_notification_foreground"
+            android:title="Notification" />
+        <item
+            android:id="@+id/settings_nav"
+            android:icon="@drawable/ic_setting_foreground"
+            android:title="Paramètres" />
+    </group>
+</menu>

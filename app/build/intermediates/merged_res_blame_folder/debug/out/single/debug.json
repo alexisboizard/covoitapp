@@ -1,0 +1,522 @@
+[
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_carpool_area_detail.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area_detail.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_search_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_search_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_car.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_car.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_app_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_app_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_logo.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_logo.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_carpool_area.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_activity_main.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_app_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_app_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_map.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_map.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_parking_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_parking_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_app_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_app_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_app_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_app_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_app_icon_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_app_icon_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_adapter_carpool_item.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/adapter_carpool_item.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_app_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_app_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_settings.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_app_icon_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_app_icon_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_parking.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_parking.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_map_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_map_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_home_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_home_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_search.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_app_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_app_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_map_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_map_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_map_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_map_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_map_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_map_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_app_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_app_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_logo.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_logo.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_app_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_app_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_map.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_map.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_parking_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_parking_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_logo.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_logo.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_app_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_app_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_icon_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_icon_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_map_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_map_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_like_button.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/like_button.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_border.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/border.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_car_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_car_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_icon_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_icon_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_parking_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_parking_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_car.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_car.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_home_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_home_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/xml_data_extraction_rules.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/xml_backup_rules.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_search_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_search_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_parking.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_parking.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_parking_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_parking_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_car_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_car_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_map_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_map_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_map_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_map_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_app_icon.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_app_icon.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_car_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_car_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_app_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_app_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_parking.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_parking.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_icon.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_icon.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_map.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_map.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_car.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_car.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_car_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_car_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_maps.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_maps.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_no_fav_heart.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/no_fav_heart.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_app_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_app_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_parking_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_parking_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_parking.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_parking.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_icon.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_icon.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/menu_drawer_menu.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_map.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_map.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_parking_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_parking_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_notifiaction.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_notifiaction.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_car_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_car_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_activity_splash_screen.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_car_background.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_car_background.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_parking.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_parking.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_app_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_app_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_logo.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_logo.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_app_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_app_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_logo.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_logo.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_car_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_car_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_notification_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_notification_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_car.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_car.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_car_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_car_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_car_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_car_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_map.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_map.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_car_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_car_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_activity_carpool_area_detail.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_carpool_area_detail.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_car_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_car_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_map_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_map_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_parking.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_parking.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_car_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_car_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_fragment_carpool_area_detail_maps.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area_detail_maps.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_setting_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_setting_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-mdpi_ic_parking_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-mdpi/ic_parking_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_empty_list.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/empty_list.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/layout_empty_recycler_view.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/empty_recycler_view.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_splash_screnn_animated.gif.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/splash_screnn_animated.gif"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-anydpi-v26_ic_car.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-anydpi-v26/ic_car.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/anim_slide_slide.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/anim/slide_slide.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_fav_heart.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/fav_heart.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_app_icon_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_app_icon_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-hdpi_ic_car.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-hdpi/ic_car.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/drawable_ic_car_foreground.xml.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/drawable/ic_car_foreground.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_app_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_app_icon_foreground.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxxhdpi_ic_map.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxxhdpi/ic_map.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xxhdpi_ic_parking_round.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xxhdpi/ic_parking_round.png"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-merged_res-36:/mipmap-xhdpi_ic_icon_foreground.png.flat",
+        "source": "com.alexisboiz.covoitapp-main-38:/mipmap-xhdpi/ic_icon_foreground.png"
+    }
+]

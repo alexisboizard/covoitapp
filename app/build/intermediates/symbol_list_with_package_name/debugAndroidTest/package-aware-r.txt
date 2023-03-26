@@ -1,0 +1,3 @@
+com.alexisboiz.covoitapp.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

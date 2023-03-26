@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_settings.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_notifiaction.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_notifiaction.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/activity_splash_screen.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_carpool_area_detail_maps.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area_detail_maps.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_search.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/activity_carpool_area_detail.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/activity_carpool_area_detail.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/empty_recycler_view.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/empty_recycler_view.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_maps.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_maps.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_carpool_area.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/fragment_carpool_area_detail.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/fragment_carpool_area_detail.xml"
+    },
+    {
+        "merged": "com.alexisboiz.covoitapp-mergeDebugResources-35:/layout/adapter_carpool_item.xml",
+        "source": "com.alexisboiz.covoitapp-main-38:/layout/adapter_carpool_item.xml"
+    }
+]
